@@ -10,6 +10,9 @@
     /*    Колір фону    */
     --primary-bg-color: #FFFFFF;
     --secondary-bg-color: #F5F4FA;
+    /*    Сітка    */
+    --items: 2;
+    --indent: 30px;
 }
 
 body {
@@ -41,6 +44,14 @@ body {
     padding: 0;
     margin: 0;
 }
+.grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--indent);
+}
+.grid-item {
+    flex-basis: calc((100% - (var(--items) - 1) * var(--indent)) / var(--items));
+} 
 
 /* ============================== */
 /*          H e a d e r           */
@@ -160,6 +171,7 @@ body {
     min-width: 200px;
     border-radius: 4px;
     padding: 10px 32px;
+    border: none;
 
     font-family:inherit;
     font-weight: 700;
@@ -169,6 +181,7 @@ body {
     cursor: pointer;
     background-color: var(--accent-color);
     color: var(--third-text-color);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
 }
 
 
@@ -206,6 +219,7 @@ body {
     justify-content: space-between;
 }
 .adv .item{
+    --items:4;
     width: 270px;
 }
 .adv .title {
@@ -226,6 +240,9 @@ body {
 .works{
     padding-bottom: 94px;
 }
+.work .grid-item{
+    --items:3;
+}
 .works .section-title,
 .comand .section-title {
     margin-bottom: 50px;
@@ -238,6 +255,8 @@ body {
     background: var(--secondary-bg-color);
 }
 .ccard{
+    --items:4;
+
     background: var(--primary-bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -349,17 +368,25 @@ body {
 
 /* Портфоліо - картки */
 .cards{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* align-items: center; */
+    /* justify-content: space-between; */
+    /* justify-content: center; */
+    --items: 3;
+    /* gap: 30px; */
+    outline: 1px solid blue;
+    
 }
 .cards .item{
     background: var(--primary-bg-color);
+    outline: 1px solid red;
+    
+   
 }
-.cards .item:nth-child(-n+6){
+/* .cards .item:nth-child(-n+6){
     margin-bottom: 30px;
-}
+} */
 .text-bloc{
     padding: 20px 24px;
     border: 1px solid  #EEEEEE;
