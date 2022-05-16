@@ -30,6 +30,9 @@ body {
     max-width: 100%;
     height: auto;
  }
+ html{
+     scroll-behavior: smooth;
+ }
 
 .container{
     /* outline: 1px solid red; */
@@ -122,9 +125,16 @@ body {
     align-items: center;
 }
 .contacts {
-    display: block;
+    /* display: block;
     padding-top: 32px;
     padding-bottom: 32px;
+    align-items: center; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 32px;
+    padding-bottom: 32px;
+
 
     font-weight: 500;
     line-height: 1.14;
@@ -140,6 +150,11 @@ body {
 .contacts-item:first-child{
     margin-right: 50px;
 }
+.contacts-icon{
+    fill: currentColor;
+    margin-right: 10px;
+
+}
 
 /* ============================== */
 /*            M a i n             */ 
@@ -147,11 +162,18 @@ body {
 
 /* Секція "герой" */
 .hero { 
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
     padding-top: 200px;
     padding-bottom: 200px;
     text-align: center;
     background-color: #2F303A;
-}
+    background-image: linear-gradient(to bottom, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url('../images/bg/hero.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    }
 .hero-title { 
     margin-right: auto;
     margin-left: auto;
@@ -211,6 +233,17 @@ body {
     clip-path: inset(50%);
     margin: -1px;
 }
+.picture-box{
+    background-color: #F5F4FA;
+    width: 270px;
+    height: 120px;
+    margin-bottom: 30px;
+    padding: 25px 100px;
+}
+.adv-icon{
+    fill: var(--primary-text-color);
+    --color2: var(--accent-color);
+}
 .adv,
 .work,
 .ccards {
@@ -222,15 +255,18 @@ body {
     --items:4;
     width: 270px;
 }
-.adv .title {
-    margin-bottom: 10px;
-
+.adv .item{
+margin-bottom: 10px;
+color: var(--primary-text-color);
+}
+.adv .title, 
+.call-title{ 
     font-weight: 700;
     font-size: 14px;
     line-height: 1.14;
-    text-transform: uppercase;
-    color: var(--primary-text-color);
+    text-transform: uppercase; 
 } 
+
 .adv .text {
     line-height: 1.71;
     color:var(--secondary-text-color);
@@ -244,7 +280,8 @@ body {
     --items:3;
 }
 .works .section-title,
-.comand .section-title {
+.comand .section-title,
+.clients .section-title {
     margin-bottom: 50px;
 }
 
@@ -256,7 +293,6 @@ body {
 }
 .ccard{
     --items:4;
-
     background: var(--primary-bg-color);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
     0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -275,21 +311,111 @@ body {
     text-align: center;
 }
 .prof {
+    margin-bottom: 16px;
     font-size: 16px;
     line-height: 1.19;
     text-align: center;    
     color: var(--secondary-text-color);
 }
+/* Секція "Команда" - Соц.мережі */
+.social {
+    display: flex;
+    align-items: center;
+    margin: auto 32px;
+}
 
+.social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: var(--primary-bg-color);
+}
+
+.social-link:hover,
+.social-link:focus {
+    background-color: var(--accent-color);
+}
+
+.social-link:hover .social-icon,
+.social-link:focus .social-icon {
+    fill: var(--third-text-color);
+}
+
+.social-item {
+    margin-right: 10px;
+}
+
+.social-item:last-child {
+    margin-right: 0;
+}
+
+.social-icon {
+    fill: #AFB1B8;
+}
+
+/* Секція "Постійні клієнти" */
+.clients{
+    padding-top: 92px;
+    padding-bottom: 92px;
+}
+.clients .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.clients .item {
+    margin-right: 30px;
+}
+
+.clients .item:last-child {
+    margin-right: 0;
+}
+.clients .link{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 170px;
+    height: 92px;
+
+    border: 1px solid #AFB1B8;
+    border-radius: 4px;
+}
+.clients .link:hover,
+.clients .link:focus{
+    border-color: var(--accent-color);
+}
+.clients .link:hover .clients-icon,
+.clients .link:focus .clients-icon{
+    fill: var(--accent-color);
+}
+
+.clients-icon{
+    fill: #AFB1B8;
+}
 /* ============================== */
 /*         F o o t e r            */
 /* ============================== */
 
 .footer {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-wrap: wrap;
+    
     padding-top: 60px;
     padding-bottom: 60px;
 
     background: #2F303A;
+}
+.footer .container {
+    display: flex;
+    align-items: baseline;
+}
+.address-container{
+    margin-right: 70px;
 }
 .footer .logo{
     display: inline-block;
@@ -308,12 +434,52 @@ body {
 }
 .map {
     text-decoration: none;
-    color:var(--third-text-color)
+    color:var(--third-text-color);
 }
 .mail, .tel{
     text-decoration: none;
     color: rgba(255, 255, 255, 0.6);
 }
+
+/*  Присоединяйтесь */
+
+.call .list{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.call-title{
+    margin-bottom: 20px;
+    color: var(--third-text-color);
+}
+.call-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255, 0.1);
+}
+.call-link:hover,
+.call-link:focus {
+    background-color: var(--accent-color);
+}
+.call-link:hover .call-icon,
+.call-link:focus .call-icon {
+    fill: var(--third-text-color);
+}
+.call .item {
+    margin-right: 10px; 
+}
+.call .item:last-child {
+    margin-right: 0;
+}
+.call-icon {
+    fill: var(--third-text-color);
+}
+
+
 
 /* ============================== */
 /*      P o r t f o l i o         */
@@ -368,21 +534,10 @@ body {
 
 /* Портфоліо - картки */
 .cards{
-    /* display: flex; */
-    /* flex-wrap: wrap; */
-    /* align-items: center; */
-    /* justify-content: space-between; */
-    /* justify-content: center; */
-    --items: 3;
-    /* gap: 30px; */
-    outline: 1px solid blue;
-    
+    --items: 3;    
 }
 .cards .item{
-    background: var(--primary-bg-color);
-    outline: 1px solid red;
-    
-   
+    background: var(--primary-bg-color);    
 }
 /* .cards .item:nth-child(-n+6){
     margin-bottom: 30px;
@@ -394,6 +549,12 @@ body {
 }
 .card {
     text-decoration: none;
+}
+.cards .item:hover,
+.cards .item:focus{
+    border: 1px solid #EEEEEE; 
+    border-radius: 4px;
+    box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
 }
 .card-title{
     margin-bottom: 4px;
