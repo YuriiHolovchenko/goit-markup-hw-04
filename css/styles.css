@@ -125,10 +125,6 @@ body {
     align-items: center;
 }
 .contacts {
-    /* display: block;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    align-items: center; */
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -234,11 +230,13 @@ body {
     margin: -1px;
 }
 .picture-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-color: #F5F4FA;
     width: 270px;
     height: 120px;
     margin-bottom: 30px;
-    padding: 25px 100px;
 }
 .adv-icon{
     fill: var(--primary-text-color);
@@ -321,7 +319,7 @@ color: var(--primary-text-color);
 .social {
     display: flex;
     align-items: center;
-    margin: auto 32px;
+    justify-content: center;
 }
 
 .social-link {
@@ -550,11 +548,9 @@ color: var(--primary-text-color);
 .card {
     text-decoration: none;
 }
-.cards .item:hover,
-.cards .item:focus{
-    border: 1px solid #EEEEEE; 
-    border-radius: 4px;
-    box-shadow: 0px 4px rgba(0, 0, 0, 0.25);
+.portfolio .card:hover{
+    display: block;
+    box-shadow: 1px 4px rgba(0, 0, 0, 0.25);
 }
 .card-title{
     margin-bottom: 4px;
